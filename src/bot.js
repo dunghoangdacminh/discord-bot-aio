@@ -7,6 +7,7 @@ const Facebook = require("erela.js-facebook");
 const Deezer = require("erela.js-deezer");
 const AppleMusic = require("erela.js-apple");
 
+
 // Discord client
 const client = new Discord.Client({
     allowedMentions: {
@@ -225,3 +226,10 @@ client.on(Discord.ShardEvents.Error, error => {
         embeds: [embed],
     });
 });
+
+var http = require('http');
+
+http.createServer(function (req, res) {
+  res.write("I'm alive");
+  res.end();
+}).listen(8000);
